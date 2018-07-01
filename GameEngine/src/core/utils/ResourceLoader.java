@@ -13,6 +13,7 @@ public class ResourceLoader {
 
 	public static Material loadMaterial(String path, String file) {
 		long time = System.currentTimeMillis();
+		
 		BufferedReader mtlReader = null;
 		Material material = null;
 		
@@ -71,6 +72,7 @@ public class ResourceLoader {
 				System.exit(1);
 			} 
 		}
+		System.out.println("INFO: Material loaded in: " + Long.toString(time - System.currentTimeMillis()));
 		return material;
 	}
 }
