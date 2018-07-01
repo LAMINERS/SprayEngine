@@ -24,7 +24,7 @@ public class Vec3f {
 		setZ(v.getZ());
 	}
 	
-	private float length() {
+	public float length() {
 		return (float) Math.sqrt(x*x + y*y + z*z);
 	}
 	
