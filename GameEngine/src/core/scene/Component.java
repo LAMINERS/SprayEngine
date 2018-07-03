@@ -12,6 +12,8 @@ public abstract class Component {
 	
 	public void render() {};
 	
+	public void destroy() {};
+	
 	public GameObject getParent() {
 		return parent;
 	}

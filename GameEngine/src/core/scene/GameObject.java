@@ -36,6 +36,12 @@ public class GameObject {
 			components.get(key).render();
 		}
 	}
+	
+	public void destroy() {
+		for(String key : components.keySet()) {
+			components.get(key).destroy();
+		}
+	}
 
 	public HashMap<String, Component> getComponents() {
 		return components;
