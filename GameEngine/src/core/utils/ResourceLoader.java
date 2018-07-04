@@ -75,4 +75,28 @@ public class ResourceLoader {
 		System.out.println("INFO: Material loaded in: " + Long.toString(time - System.currentTimeMillis()));
 		return material;
 	}
+	
+	public static String loadShader(String file) {
+		StringBuilder shaderSource = new StringBuilder();
+		BufferedReader shaderReader = null;
+		
+		try {
+			shaderReader = new BufferedReader(new FileReader("./res/shaders/" + file));
+			String line;
+			while((line = shaderReader.readLine()) != null) {
+				shaderSource.append("\n");
+			}
+			shaderReader.close();
+		} catch (FileNotFoundException e) {
+			System.err.println("ERROR: Shader not found: /res/shaders/" + file);
+			e.printStackTrace();
+			System.exit(-1);
+		} catch (IOException e) {
+			System.err.println("ERROR: Failed to read shaderfile: /res/shaders/" + file);
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		
+		return shaderSource.toString();
+	}
 }
